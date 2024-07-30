@@ -1,0 +1,16 @@
+:root {
+    --vp-c-brand: #4faaef;
+
+    .VPFooter{
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-size: 8px;
+    }
+    .VPFooter a {
+        text-decoration-line: none;
+    }
+
+    .VPFooter a:hover {
+        color: var(--vp-c-brand);
+    }
+}
