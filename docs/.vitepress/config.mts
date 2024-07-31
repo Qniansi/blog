@@ -5,10 +5,15 @@ export default defineConfig({
   lang: 'zh-CN',
   title: "王香的个人博客",
   description: "A VitePress Site",
+  head:[
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
+  appearance: false,
   themeConfig: {
+    logo: '/logo.jpg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
+      { text: '首页', link: '/' },
       // { text: 'Examples', link: '/markdown-examples' }
     ],
 

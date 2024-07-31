@@ -1,5 +1,6 @@
 :root {
     --vp-c-brand: #4faaef;
+    --vp-c-bg: #fafafa;
 
     .VPFooter{
         padding-top: 10px;
