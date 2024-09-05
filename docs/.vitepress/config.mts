@@ -1,64 +1,58 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
-// https://vitepress.dev/reference/site-config
+// 导入主题的配置
+import { blogTheme } from './blog-theme';
+
+// 如果使用 GitHub/Gitee Pages 等公共平台部署
+// 通常需要修改 base 路径，通常为“/仓库名/”
+// 如果项目名已经为 name.github.io 域名，则不需要修改！
+// const base = process.env.GITHUB_ACTIONS === 'true'
+//   ? '/vitepress-blog-sugar-template/'
+//   : '/'
+
+// Vitepress 默认配置
+// 详见文档：https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'zh-CN',
-  title: "王香的个人博客",
-  description: "A VitePress Site",
-  head:[
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
-  ],
-  appearance: false,
-  themeConfig: {
-    logo: '/logo.jpg',
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '首页', link: '/' },
-      // { text: 'Examples', link: '/markdown-examples' }
+    // 继承博客主题(@sugarat/theme)
+    extends: blogTheme,
+    // base,
+    lang: 'zh-cn',
+    title: "Qniansi's Blog",
+    description: '王香的个人博客',
+    lastUpdated: true,
+    // 详见：https://vitepress.dev/zh/reference/site-config#head
+    head: [
+        // 配置网站的图标（显示在浏览器的 tab 上）
+        // ['link', { rel: 'icon', href: `${base}favicon.ico` }], // 修改了 base 这里也需要同步修改
+        ['link', { rel: 'icon', href: '/favicon.ico' }],
     ],
+    themeConfig: {
+        // 展示 2,3 级标题在目录中
+        outline: {
+            level: [2, 3],
+            label: '目录',
+        },
+        // 默认文案修改
+        returnToTopLabel: '回到顶部',
+        sidebarMenuLabel: '相关文章',
+        lastUpdatedText: '上次更新于',
 
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' }
-    //     ]
-    //   }
-    // ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/Qniansi' }
-    ],
-
-    footer: {
-      // message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank">苏ICP备19054686号-1</a>&nbsp;&nbsp;'
-        + '<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32030002000311" target="_blank">苏公网安备32030002000311号</a>&nbsp;&nbsp;|&nbsp;&nbsp;'
-        + '<a href="https://vitepress.dev/zh/" target="_blank">Powered By VitePress</a>'
+        // 设置logo
+        logo: '/logo.png',
+        // editLink: {
+        //   pattern:
+        //     'https://github.com/ATQQ/sugar-blog/tree/master/packages/blogpress/:path',
+        //   text: '去 GitHub 上编辑内容'
+        // },
+        nav: [
+            { text: '首页', link: '/' },
+            // { text: '关于作者', link: 'https://sugarat.top/aboutme.html' },
+        ],
+        socialLinks: [
+            {
+                icon: 'github',
+                link: 'https://github.com/Qniansi',
+            },
+        ],
     },
-    search: {
-      provider: 'local',
-      options: {
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档'
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换'
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-})
+});
