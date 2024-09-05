@@ -25,6 +25,17 @@ export default defineConfig({
         // 配置网站的图标（显示在浏览器的 tab 上）
         // ['link', { rel: 'icon', href: `${base}favicon.ico` }], // 修改了 base 这里也需要同步修改
         ['link', { rel: 'icon', href: '/favicon.ico' }],
+        [
+            'script',
+            {},
+            `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?999d3ca619d9234ab88f408157c246ea";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`,
+        ],
     ],
     themeConfig: {
         // 展示 2,3 级标题在目录中
