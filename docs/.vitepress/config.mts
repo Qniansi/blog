@@ -28,7 +28,7 @@ export default defineConfig({
         [
             'script',
             {},
-            `var _hmt = _hmt || [];
+            `window._hmt = window._hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?999d3ca619d9234ab88f408157c246ea";
