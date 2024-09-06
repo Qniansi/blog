@@ -3,8 +3,6 @@ import { defineConfig } from 'vitepress';
 // 导入主题的配置
 import { blogTheme } from './blog-theme';
 
-import { pagefindPlugin } from 'vitepress-plugin-pagefind';
-
 // 如果使用 GitHub/Gitee Pages 等公共平台部署
 // 通常需要修改 base 路径，通常为“/仓库名/”
 // 如果项目名已经为 name.github.io 域名，则不需要修改！
@@ -15,9 +13,6 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind';
 // Vitepress 默认配置
 // 详见文档：https://vitepress.dev/reference/site-config
 export default defineConfig({
-    vite: {
-        plugins: [pagefindPlugin()],
-    },
     // 继承博客主题(@sugarat/theme)
     extends: blogTheme,
     // base,
