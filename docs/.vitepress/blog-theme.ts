@@ -26,7 +26,10 @@ const blogTheme = getThemeConfig({
 
     // markdown 图表支持（会增加一定的构建耗时）
     // mermaid: true
-
+    article: {
+        readingTime: true,
+        readingTimePosition: 'inline',
+    },
     // 页脚
     footer: {
         // message 字段支持配置为HTML内容，配置多条可以配置为数组
