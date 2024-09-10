@@ -20,6 +20,7 @@ export default defineConfig({
     title: "Qniansi's Blog",
     description: '王香的个人博客',
     lastUpdated: true,
+    cleanUrls: true,
     // 详见：https://vitepress.dev/zh/reference/site-config#head
     head: [
         // 配置网站的图标（显示在浏览器的 tab 上）
@@ -57,8 +58,8 @@ export default defineConfig({
         // },
         nav: [
             { text: '首页', link: '/' },
+            // { text: '后端', items: [{ text: 'Java', link: '/' }] },
             { text: '关于作者', link: '/aboutme' },
-            // { text: '关于作者', link: 'https://sugarat.top/aboutme.html' },
         ],
         socialLinks: [
             {
